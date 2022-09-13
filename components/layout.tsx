@@ -1,7 +1,10 @@
-export default function Header() {
+import Header from './header'
+
+export default function Layout({ children }: { children: any }) {
   return (
-    <header>
-      <nav></nav>
-    </header>
+    <>
+      <Header />
+      <main>{children}</main>
+    </>
   )
 }

@@ -5,7 +5,17 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
+    container: {
+      padding: {
+        DEFAULT: '1rem',
+        sm: '2rem',
+        md: '4rem',
+        lg: '8rem',
+        xl: '16rem',
+        '2xl': '32rem',
+      },
+    },
     extend: {},
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/forms')],
 }

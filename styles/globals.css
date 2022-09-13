@@ -6,8 +6,14 @@
 @tailwind utilities;
 
 @layer base {
+  * {
+    outline: none;
+  }
+
   html {
     font-family: 'IBM Plex Mono', sans-serif;
+    background-color: theme(colors.neutral.900);
+    color: theme(colors.white);
   }
 }
 
