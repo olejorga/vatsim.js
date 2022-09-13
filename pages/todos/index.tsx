@@ -1,17 +1,11 @@
 import type { NextPage } from 'next'
-import { useEffect, useState } from 'react'
 import Layout from '../../components/layout'
 import Todo from '../../components/todo'
+import useTodo from '../../hooks/useTodo'
 import TodoType from '../../types/todo'
 
 const Todos: NextPage = () => {
-  const [todos, setTodos] = useState([])
-
-  useEffect(() => {
-    fetch('http://localhost:3000/todos')
-      .then((res) => res.json())
-      .then((data) => setTodos(data))
-  }, [])
+  const {} = useTodo()
 
   const handleSubmit = (event: any) => {
     event.preventDefault()
