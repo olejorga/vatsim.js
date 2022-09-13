@@ -1,0 +1,18 @@
+@import '@fontsource/ibm-plex-sans';
+@import '@fontsource/material-icons-rounded';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'IBM Plex Mono', sans-serif;
+  }
+}
+
+@layer components {
+  .icon {
+    font-family: 'Material Icons Rounded', sans-serif;
+  }
+}
