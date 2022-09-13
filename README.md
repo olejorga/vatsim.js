@@ -1,14 +1,14 @@
-# VATSIM.js
+# Todo
 
-A small webapp for viewing vatsim traffic - part of an assignment in Web Applications at HiØ, written with love in TS <3
+A fullstack todo app - part of an assignment in Web Applications at HiØ, written with love in TS <3
 
 ## Setup
 
 Get the code.
 
 ```bash
-git clone https://github.com/olejorga/vatsim.js.git
-cd vatsim.js
+git clone https://github.com/olejorga/todo.git
+cd todo
 ```
 
 To start the app, run the development server.
