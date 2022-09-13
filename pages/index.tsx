@@ -31,9 +31,9 @@ const Home: NextPage = () => {
         </section>
         <figure className="relative flex flex-1 flex-col gap-4">
           <div className="absolute z-20 h-full w-full"></div>
-          <Todo description="Brush teeth" checked={false} />
-          <Todo description="Eat breakfast" checked={false} />
-          <Todo description="Wake up" checked={true} />
+          <Todo id={1} description="Brush teeth" checked={false} />
+          <Todo id={2} description="Eat breakfast" checked={false} />
+          <Todo id={3} description="Wake up" checked={true} />
         </figure>
       </article>
     </Layout>

@@ -1,5 +1,5 @@
 type TodoType = {
-  id: number
+  id?: number
   description: string
   checked: boolean
 }

@@ -1,6 +1,6 @@
-type TodoProps = {
-  description: string
-  checked: boolean
+import TodoType from '../types/todo'
+
+interface TodoProps extends TodoType {
   handleChecked?: (e: any) => void
 }
 

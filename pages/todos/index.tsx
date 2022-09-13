@@ -1,10 +1,17 @@
 import type { NextPage } from 'next'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Layout from '../../components/layout'
 import Todo from '../../components/todo'
+import TodoType from '../../types/todo'
 
 const Todos: NextPage = () => {
-  const [todos, setTodos] = useState(Todo [])
+  const [todos, setTodos] = useState([])
+
+  useEffect(() => {
+    fetch('http://localhost:3000/todos')
+      .then((res) => res.json())
+      .then((data) => setTodos(data))
+  }, [])
 
   const handleSubmit = (event: any) => {
     event.preventDefault()
@@ -20,7 +27,9 @@ const Todos: NextPage = () => {
         />
       </form>
       <section className="container mx-auto">
-        <Todo />
+        {todos?.map((todo: TodoType) => (
+          <Todo key={todo.id} {...todo} />
+        ))}
       </section>
     </Layout>
   )
