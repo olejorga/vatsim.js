@@ -1,12 +1,23 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
+import ErrorType from '../../../types/error'
+import TodoType from '../../../types/todo'
 
-type Data = {
-  name: string
-}
-
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data>,
+  res: NextApiResponse<TodoType[] | ErrorType>,
 ) {
-  res.status(200).json({ name: 'John Doe' })
+  switch (req.method) {
+    case 'GET':
+      break
+
+    case 'PATCH':
+      break
+
+    case 'DELETE':
+      break
+
+    default:
+      res.status(405).json({ error: 'Method Not Allowed' })
+      break
+  }
 }

@@ -12,7 +12,7 @@ module.exports = {
         md: '4rem',
         lg: '8rem',
         xl: '16rem',
-        '2xl': '32rem',
+        '2xl': '24rem',
       },
     },
     extend: {},

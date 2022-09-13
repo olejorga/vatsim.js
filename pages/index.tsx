@@ -29,10 +29,11 @@ const Home: NextPage = () => {
             is what our customers expect from a todo app.
           </p>
         </section>
-        <figure className="flex flex-1 flex-col gap-4">
-          <Todo />
-          <Todo />
-          <Todo />
+        <figure className="relative flex flex-1 flex-col gap-4">
+          <div className="absolute z-20 h-full w-full"></div>
+          <Todo description="Brush teeth" checked={false} />
+          <Todo description="Eat breakfast" checked={false} />
+          <Todo description="Wake up" checked={true} />
         </figure>
       </article>
     </Layout>

@@ -1,8 +1,11 @@
 import type { NextPage } from 'next'
+import { useState } from 'react'
 import Layout from '../../components/layout'
 import Todo from '../../components/todo'
 
 const Todos: NextPage = () => {
+  const [todos, setTodos] = useState(Todo [])
+
   const handleSubmit = (event: any) => {
     event.preventDefault()
   }
