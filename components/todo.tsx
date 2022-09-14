@@ -1,13 +1,16 @@
 import TodoType from '../types/todo'
 
 interface TodoProps extends TodoType {
-  handleChecked?: (e: any) => void
+  handleChecked?: (id: number, todo: TodoType) => void
+  handleDelete?: (id: number) => void
 }
 
 export default function Todo({
+  id,
   description,
   checked,
   handleChecked,
+  handleDelete,
 }: TodoProps) {
   return (
     <article
@@ -19,10 +22,20 @@ export default function Todo({
         type="checkbox"
         className="h-8 w-8 cursor-pointer rounded-full border-2 border-neutral-700 bg-neutral-900 text-black focus:ring-0 focus:ring-offset-0"
         defaultChecked={checked}
-        onChange={handleChecked}
+        onChange={(e) =>
+          handleChecked?.(id as any, {
+            description,
+            checked: e.currentTarget.checked,
+          })
+        }
       />
       <p className="flex-1 truncate text-lg font-bold">{description}</p>
-      <button className="icon h-8 w-8 text-xl">delete</button>
+      <button
+        className="icon h-8 w-8 text-xl"
+        onClick={() => handleDelete?.(id as any)}
+      >
+        delete
+      </button>
     </article>
   )
 }

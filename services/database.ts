@@ -23,6 +23,7 @@ class Database<DataType extends { id?: number }> {
   async add(data: DataType) {
     await this.load()
 
+    data = JSON.parse(data as any)
     data.id = this.id()
     this.data.push(data)
 
@@ -33,8 +34,9 @@ class Database<DataType extends { id?: number }> {
   async update(id: number, data: DataType) {
     await this.load()
 
+    data = JSON.parse(data as any)
     data.id = id
-    const index = this.data.indexOf(data)
+    const index = this.data.findIndex((data) => data.id == id)
 
     if (index >= 0) this.data[index] = data
 
