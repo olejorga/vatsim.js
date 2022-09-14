@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Layout from '../components/layout'
 import Todo from '../components/todo'
 
-const Home: NextPage = () => {
+const HomePage: NextPage = () => {
   return (
     <Layout>
       <article className="border-b-[1px] border-neutral-700 bg-black py-32">
@@ -40,4 +40,4 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
+export default HomePage

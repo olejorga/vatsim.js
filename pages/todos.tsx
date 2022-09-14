@@ -1,10 +1,10 @@
 import type { NextPage } from 'next'
-import Layout from '../../components/layout'
-import Todo from '../../components/todo'
-import useTodo from '../../hooks/useTodo'
-import TodoType from '../../types/todo'
+import Layout from '../components/layout'
+import Todo from '../components/todo'
+import useTodo from '../hooks/useTodo'
+import TodoType from '../types/todo'
 
-const Todos: NextPage = () => {
+const TodosPage: NextPage = () => {
   const { todos, addTodo, changeTodo, removeTodo } = useTodo()
 
   const handleSubmit = (event: any) => {
@@ -45,4 +45,4 @@ const Todos: NextPage = () => {
   )
 }
 
-export default Todos
+export default TodosPage

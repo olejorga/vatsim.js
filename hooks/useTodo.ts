@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import TodoType from '../types/todo'
 
-const useTodo = (id?: number) => {
+const useTodo = () => {
   const [todos, setTodos] = useState([])
   const url = `http://localhost:3000/api/todos`
 
@@ -22,12 +22,12 @@ const useTodo = (id?: number) => {
   }
 
   const getTodo = useCallback(() => {
-    fetch(`${url}/${id ? id : ''}`)
+    fetch(url)
       .then((res) => res.json())
-      .then((data) => {
-        setTodos(data.sort((a: any, b: any) => a.checked - b.checked))
-      })
-  }, [url, id])
+      .then((data) =>
+        setTodos(data.sort((a: any, b: any) => a.checked - b.checked) as any),
+      )
+  }, [url])
 
   useEffect(() => {
     getTodo()
